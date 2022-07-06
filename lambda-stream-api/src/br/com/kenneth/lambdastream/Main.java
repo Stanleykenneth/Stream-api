@@ -10,9 +10,12 @@ public class Main {
 
 		List<String> filteredPalavras = palavras.stream()
 				.filter(p -> p.startsWith("J"))// Filtra todos os nomes com a letra J.
-				.map(w -> w.toLowerCase())// Transforma letra Maiúscula em letra minuscula.
+				//.map(w -> w.toLowerCase())// Transforma letra Maiúscula em letra minuscula.
+				.map(String::toLowerCase)// Outra forma de simplificar ainda mais.
+				//Método references
 				.collect(Collectors.toList());// Adiciona tudo em uma nova lista.
 
-		filteredPalavras.forEach(p -> System.out.println(p));
+		//filteredPalavras.forEach(p -> System.out.println(p));
+		filteredPalavras.forEach(System.out::println);
 	}
 }
